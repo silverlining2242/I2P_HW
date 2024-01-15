@@ -1,0 +1,7 @@
+<head>
+	<title>This is the title</title>
+</head>
+<body>
+	<h1>Hello world</h1>
+	<p>Good luck and have <a href="http://140.114.86.238/problem/12544/">fun</a>!!!</p>
+</body>
