@@ -20,30 +20,31 @@ to find pattern or other solutions
 
 ---
 ## Recursion
-1.	Basic Step/ or termination condition of the recursive function itself. 
+1.	Base case/ or termination condition of the recursive function itself. 
 Basic step: it is the base case it holds. Like in MMI, define the result of n = 1;
 Termination condition: 
-some of recursion starts from the result and backward to find the root, or from the start and move forward to verify if result == ideal output. 
+some of recursion starts from the result and backward to find the root, or from the start and move forward to verify if result == ideal output(terminate condition). 
 Take the backward example, it is like the function start with n= 10 for initial input argument and it has n – 1 as input to keep decrease. Then, in this case, the ending condition can be if n = 0 , return;
-It is usually written on the top side inside the function. 
+It is usually written on the top inside the function. 
 2.	Recursive (inductive part): as the above example, keep calling itself of the function until it meets the condition of termination.
 Notes: it will keep finished the smallest part and go to next iteration. See DFS concept. 
 in MMI:
 (1) define n = 1 holds
-(2) assume n -1 holds, then prove n still hold. So that n = 2 as n-1 = 1 holds 2 holds. N = 3 as n – 1 =2 holds, n holds…
+(2) assume n -1 holds, then prove n still hold. for example, that n = 2 as n-1 = 1 holds 2 holds. N = 3 as n – 1 =2 holds, n holds…
 
 
 
 * tips: 
 (1)we can use step+1 in parameter to track how many times we call the function 
 (2)usually declare the map globally and avoid duplicate declaration(common error!). but for swapMap it need it as parameter when calling the funciton
-(3)use simple hanoi case to break down how recursion iterate
+(3)use simple hanoi case to fully understand how recursion iterate break down
 * inside recursion it call one recursion
 13420(mid2-3)_domoTravel
 12604(mid2-1)_NqueenMrook
+  
 * inside recurison it call multiple recursions with different aurguments
 usually call four directions to return the value or true false. 
-Unlike above call one recursion itselt, which we can terminate it to return the value once it call the recurison function one most as final and hit the base case(terminate case) to terminate. 
+Unlike above call one recursion itselt, which we can terminate it to return the value once it call the recurison function one more time as the final and hit the base case(terminate case) to terminate. 
 If calling multiple recursions function with different directions, we need to one step ahead to determine each branches true/ false.
 See SwapMap. 
 
@@ -70,7 +71,7 @@ others:
 14101(mid2-4)_domo3D
 
 ## Pointer
-We usually declare the variable globally, if we will can different functions to modify the variable values.
+We usually declare the variable globally, so that we can call different functions to modify the global variable values.
 What if we declare variable in main(), and trying to modify the value use function ?
 
 We can declare a pointer varaible like int *a; it means the pointer pointer to a int value. The pointer itself stores the memory address. We can use the pointer to change the variable that is outside of its scope. 
@@ -79,10 +80,11 @@ The concept will be used in following Dynamic Memory Allocation, linked list, st
 
 ## Dynamic Memory Allocation
 
-We often allocate the memory at the complile time. For example, in map questions, we declare maximum map size char map[500][500]; and when at run time scanf("%d %d", &h, &w), then use h, w to create the map. What if we want to decide how many memory we need to allocate at the run time?
+We often allocate the memory at the complile time. For example, in map questions, we declare possible maximum map size char map[500][500]; and when at run time scanf("%d %d", &h, &w), then use h, w to create the map. What if we want to decide how many memory we need to allocate at the run time?
 if we use char map[h][w]; scanf("%d %d", &h, &w), although VLA supports this, but it may cause untrackable error!
 
 use malloc and free to allocate and free the memory we declare.
+*malloc and free is a pair, once you malloc a space, must free it before the end
 
 2D question: 13361(hw9-1)_cardtable
 3D question: 11711(hw8-1)_malloc3Darr
@@ -97,7 +99,7 @@ Using malloc, we allocate Node space during the run time and append it to link w
 13391(fin-4)_domoConductor
 14180(fin-5)_domoCircularInsert
 
-opeartions: Add front, back, insert after certain node, swap
+operations: Add front, back, insert after certain node, swap
 (1) If we need to opearte the certain node, we should start from the head and get to the node we need to operate.
 (2) In the function, we declare the Node locally, how we can still print it in main function ? 
 
@@ -105,7 +107,7 @@ The memory allocated using malloc within a function persists beyond the function
 If you create a newNode within a function and do not link it to any existing data structures outside that function, it will indeed persist in memory after the function ends. However, without a reference to that memory space, you won't be able to access or use it further in your program, resulting in a memory leak.
 
 ## String operation
-it use function in <string.h>, the concept is using pointer to points to which memory cell of char array.
+Use function in <string.h>, the concept is using pointer to points to which memory cell of the char array.
 use function to parsing the text
 
 quesitons
