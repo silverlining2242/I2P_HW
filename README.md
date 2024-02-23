@@ -6,17 +6,17 @@
 
 ## Array/ Loop/ Others
 
-use 2D array to solve questions like map operations.
-*Careful for iteration exceeds the boundary will cause seg fault error
+use 2D array to solve questions like map operations.  
+*Careful for iteration exceeds the boundary will cause seg fault error  
 13648(mid1-3)_textmaze
 14007(hw4-1)_convolution
-
+  
 for/ whil loop.
 14049(mid1-2)_domoTreasure
 13991(lab3-2)_palindrome
 14018(mid1-6)_domoHack2 (challenging with lots of edge case testing)
 Others
-to find pattern or other solutions
+to find pattern or other solutions  
 
 ---
 ## Recursion
